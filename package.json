@@ -1,8 +1,7 @@
 {
     "name": "@znetstar/encode-tools-native",
     "version": "1.0.1",
-    "description": "This package aggregates different libraries for encoding, serializing, generagit remote add origin git@github.com:znetstar/encode-tools-native.gitting ids and hashing things, exposing a common interface.",
-  git remote add origin git@github.com:znetstar/encode-tools-native.git,
+    "description": "This package aggregates different libraries for encoding, serializing, generating ids and hashing things, exposing a common interface.",
     "main": "lib/index.js",
     "scripts": {
         "test": "mocha -r ts-node/register --timeout 0 --ui bdd src/test/src/*",
