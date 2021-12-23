@@ -1,6 +1,6 @@
 {
     "name": "@znetstar/encode-tools-native",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "This package aggregates different libraries for encoding, serializing, generating ids and hashing things, exposing a common interface.",
     "main": "lib/index.js",
     "scripts": {
