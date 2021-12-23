@@ -1,0 +1,77 @@
+{
+    "name": "@znetstar/encode-tools-native",
+    "version": "1.0.1",
+    "description": "This package aggregates different libraries for encoding, serializing, generating ids and hashing things, exposing a common interface.",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "mocha -r ts-node/register --timeout 0 --ui bdd src/test/src/*",
+        "test-bail": "mocha -r ts-node/register --timeout 0 --ui bdd src/test/src/* --bail",
+        "prepack": "grunt",
+        "docs": "grunt docs",
+        "build": "grunt"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org",
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/znetstar/encode-tools-native"
+    },
+    "contributors": [
+        {
+            "email": "zachary@zacharyboyd.nyc",
+            "name": "Zachary Boyd",
+            "url": "https://zacharyboyd.nyc"
+        },
+        {
+            "email": "open-source@etomon.com",
+            "name": "Etomon Team",
+            "url": "https://etomon.com"
+        }
+    ],
+    "license": "LGPL-3.0",
+    "devDependencies": {
+        "@types/chai": "^4.2.18",
+        "@types/chance": "^1.1.2",
+        "@types/content-type": "^1.1.5",
+        "@types/lodash": "^4.14.170",
+        "@types/mocha": "^8.2.2",
+        "@types/nanoid": "^2.1.0",
+        "@types/node": "^15.0.2",
+        "@types/sharp": "^0.28.1",
+        "@types/uuid": "^8.3.0",
+        "base32.js": "^0.1.0",
+        "cbor": "^8.1.0",
+        "chai": "^4.3.4",
+        "chance": "^1.1.7",
+        "docdash": "^1.2.0",
+        "grunt": "^1.4.0",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-jsdoc": "^2.4.1",
+        "grunt-ts": "^6.0.0-beta.22",
+        "grunt-typedoc": "^0.2.4",
+        "hashids": "^2.2.10",
+        "mocha": "^8.4.0",
+        "node-object-hash": "^2.3.10",
+        "shelljs": "^0.8.4",
+        "ts-node": "^9.1.1",
+        "typedarray-to-buffer": "^4.0.0",
+        "typedoc": "^0.20.37",
+        "typescript": "^4.1.6"
+    },
+    "optionalDependencies": {
+        "bson-ext": "^4.x",
+        "cbor-extract": "^0.x",
+        "lzma-native": "^8.x",
+        "sharp": "^0.x",
+        "xxhash-addon": "^1.x"
+    },
+    "engines": {
+        "node": ">=12.22.6"
+    },
+    "dependencies": {
+        "@znetstar/encode-tools": "^1.0.1"
+    }
+}
