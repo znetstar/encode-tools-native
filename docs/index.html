@@ -1,0 +1,559 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@znetstar/encode-tools-native</title>
+	<meta name="description" content="Documentation for @znetstar/encode-tools-native">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@znetstar/encode-tools-native</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@znetstar/encode-tools-native</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#encode-tools" id="encode-tools" style="color: inherit; text-decoration: none;">
+					<h1>Encode Tools</h1>
+				</a>
+				<p><a href="https://badge.fury.io/js/@znetstar%2Fencode-tools-native"><img src="https://badge.fury.io/js/@znetstar%2Fencode-tools-native.svg" alt="npm version"></a></p>
+				<p><a href="https://travis-ci.com/znetstar/encode-tools"><img src="https://travis-ci.com/znetstar/encode-tools.svg?branch=master" alt="Build Status"></a></p>
+				<p>This package aggregates different libraries for encoding, serializing, compressing, generating ids and hashing things, exposing a common interface. </p>
+				<p><em>Many</em> other packages serve the same purpose, but our objective is to ensure a consistent experience in both node.js and the browser and standardize the api so functions work the same way across different underlying libraries.</p>
+				<p>Encode Tools also has a command line wrapper <a href="https://zb.gy/gh/encode-cli"><code>encode-cli</code></a>.</p>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h2>Examples</h2>
+				</a>
+				<p>Encoding a Buffer as base64url    </p>
+				<pre><code class="language-javascript"><span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeTools</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">buf</span><span style="color: #000000"> = </span><span style="color: #001080">Buffer</span><span style="color: #000000">.</span><span style="color: #795E26">from</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;hello world&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;utf8&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">newBuf</span><span style="color: #000000"> = </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">encodeBuffer</span><span style="color: #000000">(</span><span style="color: #001080">buf</span><span style="color: #000000">, </span><span style="color: #001080">BinaryEncoding</span><span style="color: #000000">.</span><span style="color: #001080">base64url</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">newBuf</span><span style="color: #000000">.</span><span style="color: #795E26">toString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;utf8&#039;</span><span style="color: #000000">));</span>
+</code></pre>
+				<p>Hashing an object wth xxhash</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeTools</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">obj</span><span style="color: #000000"> = { </span><span style="color: #001080">foo:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;bar&#039;</span><span style="color: #000000"> };</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">newBuf</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">hashObject</span><span style="color: #000000">(</span><span style="color: #001080">obj</span><span style="color: #000000">, </span><span style="color: #001080">HashAlgorithm</span><span style="color: #000000">.</span><span style="color: #001080">xxhash64</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">newBuf</span><span style="color: #000000">.</span><span style="color: #795E26">toString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;utf8&#039;</span><span style="color: #000000">));</span>
+</code></pre>
+				<p>Serializing an object wth msgpack</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeTools</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">obj</span><span style="color: #000000"> = { </span><span style="color: #001080">foo:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;bar&#039;</span><span style="color: #000000"> };</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">newBuf</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">serializeObject</span><span style="color: #000000">(</span><span style="color: #001080">obj</span><span style="color: #000000">, </span><span style="color: #001080">SerializationFormat</span><span style="color: #000000">.</span><span style="color: #001080">msgpack</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">newBuf</span><span style="color: #000000">.</span><span style="color: #795E26">toString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;base64&#039;</span><span style="color: #000000">));</span>
+</code></pre>
+				<p>Generating a base64-encoded UUID v4</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeTools</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">newBuf</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">uniqueId</span><span style="color: #000000">(</span><span style="color: #001080">IDFormat</span><span style="color: #000000">.</span><span style="color: #001080">uuidv4</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">newBuf</span><span style="color: #000000">.</span><span style="color: #795E26">toString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;base64&#039;</span><span style="color: #000000">));</span>
+</code></pre>
+				<p>Compressing a buffer with lzma</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeTools</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">newBuf</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">compress</span><span style="color: #000000">(</span><span style="color: #001080">Buffer</span><span style="color: #000000">.</span><span style="color: #795E26">from</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;hi&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;utf8&#039;</span><span style="color: #000000">), </span><span style="color: #001080">CompressionFormat</span><span style="color: #000000">.</span><span style="color: #001080">lzma</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">newBuf</span><span style="color: #000000">.</span><span style="color: #795E26">toString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;base64&#039;</span><span style="color: #000000">));</span>
+</code></pre>
+				<p>Resizing a png image</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeTools</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">imageBuf</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> (</span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Promise</span><span style="color: #000000">((</span><span style="color: #001080">resolve</span><span style="color: #000000">, </span><span style="color: #001080">reject</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">new</span><span style="color: #000000"> (</span><span style="color: #001080">Jimp</span><span style="color: #000000">)(</span><span style="color: #098658">500</span><span style="color: #000000">, </span><span style="color: #098658">500</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;#FFFFFF&#039;</span><span style="color: #000000">, (</span><span style="color: #001080">err</span><span style="color: #000000">: </span><span style="color: #267F99">unknown</span><span style="color: #000000">, </span><span style="color: #001080">image</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">err</span><span style="color: #000000">) </span><span style="color: #795E26">reject</span><span style="color: #000000">(</span><span style="color: #001080">err</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">else</span><span style="color: #000000"> </span><span style="color: #795E26">resolve</span><span style="color: #000000">(</span><span style="color: #001080">image</span><span style="color: #000000">);</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">})).</span><span style="color: #795E26">getBufferAsync</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;image/png&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">myResizedPng</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">resizeImage</span><span style="color: #000000">(</span><span style="color: #001080">imageBuf</span><span style="color: #000000">, { </span><span style="color: #001080">width:</span><span style="color: #000000"> </span><span style="color: #098658">250</span><span style="color: #000000"> }, </span><span style="color: #001080">ImageFormat</span><span style="color: #000000">.</span><span style="color: #001080">png</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#structure" id="structure" style="color: inherit; text-decoration: none;">
+					<h2>Structure</h2>
+				</a>
+				<p>This project is divided into two packages, a core package with no native dependencies (<a href="https://zb.gy/gh/encode-tools">@znetstar/encode-tools</a>), and a full version with native modules as optional dependencies (<a href="https://zb.gy/gh/encode-tools-native">@znetstar/encode-tools-native</a>). The core package should work well in the browser via Webpack or Browserify, whereas the full version includes more formats and should have better performance.</p>
+				<a href="#algorithms" id="algorithms" style="color: inherit; text-decoration: none;">
+					<h2>Algorithms</h2>
+				</a>
+				<p>Below are a list of supported algorithms, their backing library, and their support in the browser.</p>
+				<a href="#binary-encoding" id="binary-encoding" style="color: inherit; text-decoration: none;">
+					<h3>Binary Encoding</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Works In Browser?</th>
+							<th>Package</th>
+							<th>Native Package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>nodeBuffer</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/buffer">buffer</a></td>
+							<td><a href="https://nodejs.org/api/buffer.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>base64</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/buffer">buffer</a></td>
+							<td><a href="https://nodejs.org/api/buffer.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>base64url</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/buffer">buffer</a></td>
+							<td><a href="https://nodejs.org/api/buffer.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>hex</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/buffer">buffer</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>base32</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/base32.js">base32.js</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>hashids</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hashids">hashids</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>arrayBuffer</td>
+							<td>✓</td>
+							<td>(built-in)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>base85 (ascii85)</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/base85">base85</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ascii85</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/base85">base85</a></td>
+							<td></td>
+						</tr>
+				</tbody></table>
+				<a href="#hashing" id="hashing" style="color: inherit; text-decoration: none;">
+					<h3>Hashing</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Works In Browser?</th>
+							<th>Package</th>
+							<th>Native Package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>crc32</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>xxhash3</td>
+							<td></td>
+							<td></td>
+							<td><a href="https://www.npmjs.com/package/xxhash-addon">xxhash-addon</a></td>
+						</tr>
+						<tr>
+							<td>xxhash64</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td><a href="https://www.npmjs.com/package/xxhash-addon">xxhash-addon</a></td>
+						</tr>
+						<tr>
+							<td>xxhash32</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td><a href="https://www.npmjs.com/package/xxhash-addon">xxhash-addon</a></td>
+						</tr>
+						<tr>
+							<td>md5</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td><a href="https://nodejs.org/api/crypto.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>sha1</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td><a href="https://nodejs.org/api/crypto.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>sha2 (sha512)</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td><a href="https://nodejs.org/api/crypto.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>sha512</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td><a href="https://nodejs.org/api/crypto.html">(built-in)</a></td>
+						</tr>
+						<tr>
+							<td>sha3</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>bcrypt</td>
+							<td>✓</td>
+							<td><a href="https://www.npmjs.com/package/hash-wasm">hash-wasm</a></td>
+							<td></td>
+						</tr>
+				</tbody></table>
+				<a href="#id-generation" id="id-generation" style="color: inherit; text-decoration: none;">
+					<h3>ID Generation</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Works In Browser?</th>
+							<th>Package</th>
+							<th>Native Package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>uuidv4</td>
+							<td>✓</td>
+							<td>uuid</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>uuidv2</td>
+							<td>✓</td>
+							<td>uuid</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>uuidv4string</td>
+							<td>✓</td>
+							<td>uuid</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>uuidv2string</td>
+							<td>✓</td>
+							<td>uuid</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>objectId</td>
+							<td>✓</td>
+							<td>bson</td>
+							<td>bson-ext</td>
+						</tr>
+						<tr>
+							<td>nanoid</td>
+							<td>✓</td>
+							<td>nanoid</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>timestamp</td>
+							<td>✓</td>
+							<td>(built in)</td>
+							<td></td>
+						</tr>
+				</tbody></table>
+				<a href="#serialization" id="serialization" style="color: inherit; text-decoration: none;">
+					<h3>Serialization</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Works In Browser?</th>
+							<th>Package</th>
+							<th>Native Package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>json</td>
+							<td>✓</td>
+							<td>(built in)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>cbor</td>
+							<td>✓</td>
+							<td>cbor-web</td>
+							<td>cbor</td>
+						</tr>
+						<tr>
+							<td>msgpack</td>
+							<td>✓</td>
+							<td>@msgpack/msgpack</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>bson</td>
+							<td>✓</td>
+							<td>bson</td>
+							<td>bson-ext</td>
+						</tr>
+				</tbody></table>
+				<a href="#compression" id="compression" style="color: inherit; text-decoration: none;">
+					<h3>Compression</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Works In Browser?</th>
+							<th>Package</th>
+							<th>Native Package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>zstd</td>
+							<td>✓</td>
+							<td>zstd-codec</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>lzma</td>
+							<td>✓</td>
+							<td>lzma</td>
+							<td>lzma-native</td>
+						</tr>
+				</tbody></table>
+				<a href="#image-manipulation" id="image-manipulation" style="color: inherit; text-decoration: none;">
+					<h3>Image Manipulation</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Works In Browser?</th>
+							<th>Package</th>
+							<th>Native Package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>png</td>
+							<td>✓</td>
+							<td>jimp</td>
+							<td>sharp</td>
+						</tr>
+						<tr>
+							<td>jpeg</td>
+							<td>✓</td>
+							<td>jimp</td>
+							<td>sharp</td>
+						</tr>
+						<tr>
+							<td>webp</td>
+							<td></td>
+							<td>sharp</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>avif</td>
+							<td></td>
+							<td>sharp</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>tiff</td>
+							<td></td>
+							<td>sharp</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>gif*</td>
+							<td></td>
+							<td>sharp</td>
+							<td></td>
+						</tr>
+				</tbody></table>
+				<a href="#requirements" id="requirements" style="color: inherit; text-decoration: none;">
+					<h2>Requirements</h2>
+				</a>
+				<p>Encode Tools runs in the browser and in node.js, with a few exceptions. The <code>bson-ext</code>, <code>lzma-native</code>, <code>xxhash-addon</code> and <code>cbor-extract</code> packages have native bindings, and so cannot run in the browser. For browser compatibility, the <code>EncodeTools</code> class uses the pure javascript <code>bson</code>, <code>lzma</code>, <code>hash-wsam</code>, and <code>cbor-x</code> packages, respectively,  to provide equivalent support albeit at the cost of performance. Additionally, <code>hash-wsam</code> lacks support for xxhash3.</p>
+				<p>The <code>EncodeToolsAuto</code> class will use the native packages <code>bson-ext</code>, <code>lzma-native</code> and <code>xxhash-addon</code> (and any future native packages). <code>bson-ext</code>, <code>lzma-native</code> and <code>xxhash-addon</code> are listed as optional dependencies, and NPM will attempt to install them automatically. </p>
+				<p>The constructor of <code>EncodeToolsAuto</code> takes a second set of default <code>EncodingOptions</code> to use as a fallback if it cannot
+				find the needed module.</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">enc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EncodeToolsAuto</span><span style="color: #000000">({ </span><span style="color: #001080">hashAlgorithm:</span><span style="color: #000000"> </span><span style="color: #001080">HashAlgorithm</span><span style="color: #000000">.</span><span style="color: #001080">xxhash3</span><span style="color: #000000"> }, { </span><span style="color: #001080">hashAlgorithm:</span><span style="color: #000000"> </span><span style="color: #001080">HashAlgorithm</span><span style="color: #000000">.</span><span style="color: #001080">xxhash64</span><span style="color: #000000"> });</span>
+<span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #001080">availableNativeModules</span><span style="color: #000000">.</span><span style="color: #001080">xxhashAddon</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;should be xxhash3&#039;</span><span style="color: #000000">, </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">hashString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Test&#039;</span><span style="color: #000000">));</span>
+<span style="color: #AF00DB">else</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;should be xxhash64&#039;</span><span style="color: #000000">, </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">enc</span><span style="color: #000000">.</span><span style="color: #795E26">hashString</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Test&#039;</span><span style="color: #000000">));</span>
+</code></pre>
+				<p>The <code>gif</code> image format in <code>EncodeToolsAuto</code> requires <code>libvips</code> compiled with ImageMagick support (<a href="https://zb.gy/qPJH">as described here</a>). I haven&#39;t had time to re-build libvips on my machine, so there are no mocha tests for the <code>gif</code> format.</p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p>Please see the documentation located at <a href="https://znetstar.github.io/encode-tools/">https://znetstar.github.io/encode-tools/</a> and <a href="https://znetstar.github.io/encode-tools-native/">https://znetstar.github.io/encode-tools-native/</a> </p>
+				<a href="#webpack" id="webpack" style="color: inherit; text-decoration: none;">
+					<h2>Webpack</h2>
+				</a>
+				<p>For issues with Webpack, try adding all the native dependencies to the <code>externals</code> section.</p>
+				<pre><code class="language-javascript"><span style="color: #000000">{</span>
+<span style="color: #000000">  externals: {</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;xxhash-addon&#039;</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;commonjs xxhash-addon&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;bson-ext&#039;</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;commonjs bson-ext&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;shelljs&#039;</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;commonjs shelljs&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;lzma-native&#039;</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;commonjs lzma-native&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;sharp&#039;</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;commonjs sharp&#039;</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #008000">// For Webpack 5+ only, add `node-polyfill-webpack-plugin`</span>
+<span style="color: #000000">  plugins: [</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">new</span><span style="color: #000000"> (</span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;node-polyfill-webpack-plugin&#039;</span><span style="color: #000000">))()</span>
+<span style="color: #000000">  ]</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#nextjs" id="nextjs" style="color: inherit; text-decoration: none;">
+					<h2>Next.js</h2>
+				</a>
+				<p>For Next.js, you can insert into <code>next.config.js</code></p>
+				<pre><code class="language-javascript"><span style="color: #000000">{</span>
+<span style="color: #000000">  webpack: (</span><span style="color: #001080">config</span><span style="color: #000000">, { </span><span style="color: #001080">isServer</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (!</span><span style="color: #001080">isServer</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #001080">config</span><span style="color: #000000">.</span><span style="color: #001080">resolve</span><span style="color: #000000">.</span><span style="color: #001080">fallback</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">        </span><span style="color: #001080">fs:</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">      </span><span style="color: #001080">config</span><span style="color: #000000">.</span><span style="color: #001080">externals</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">        ...</span><span style="color: #001080">config</span><span style="color: #000000">.</span><span style="color: #001080">externals</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;xxhash-addon&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;commonjs xxhash-addon&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;bson-ext&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;commonjs bson-ext&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;shelljs&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;commonjs shelljs&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;lzma-native&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;commonjs lzma-native&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;sharp&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;commonjs sharp&#039;</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">      </span><span style="color: #001080">config</span><span style="color: #000000">.</span><span style="color: #001080">plugins</span><span style="color: #000000"> = [</span>
+<span style="color: #000000">        ...</span><span style="color: #001080">config</span><span style="color: #000000">.</span><span style="color: #001080">plugins</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">new</span><span style="color: #000000"> (</span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;node-polyfill-webpack-plugin&#039;</span><span style="color: #000000">))()</span>
+<span style="color: #000000">      ]</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">config</span><span style="color: #000000">;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#tests" id="tests" style="color: inherit; text-decoration: none;">
+					<h2>Tests</h2>
+				</a>
+				<p>Tests are written in Mocha, to run use <code>npm test</code>.</p>
+				<a href="#attribution" id="attribution" style="color: inherit; text-decoration: none;">
+					<h2>Attribution</h2>
+				</a>
+				<p>This project is a fork of <a href="https://github.com/EtomonUSA/encode-tools">@etomon/encode-tools</a>. </p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>znetstar Encode Tools is licensed under the GNU LGPL-3.0, a copy of which can be found at <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/encodetools.html">Encode<wbr>Tools</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/encodetoolsauto.html">Encode<wbr>Tools<wbr>Auto</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/encodetoolsnative.html">Encode<wbr>Tools<wbr>Native</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/iencodetools.html">IEncode<wbr>Tools</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
