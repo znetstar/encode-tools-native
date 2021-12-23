@@ -1,6 +1,6 @@
 # Encode Tools
 
-[![NPM](https://nodei.co/npm/@znetstar/encode-tools.png)](https://nodei.co/npm/@znetstar/encode-tools/)
+[![npm version](https://badge.fury.io/js/@znetstar%2Fencode-tools-native.svg)](https://badge.fury.io/js/@znetstar%2Fencode-tools-native)
 
 [![Build Status](https://travis-ci.com/znetstar/encode-tools.svg?branch=master)](https://travis-ci.com/znetstar/encode-tools)
 
