@@ -42,7 +42,6 @@
         "@types/sharp": "^0.28.1",
         "@types/uuid": "^8.3.0",
         "base32.js": "^0.1.0",
-        "cbor": "^8.1.0",
         "chai": "^4.3.4",
         "chance": "^1.1.7",
         "docdash": "^1.2.0",
@@ -72,6 +71,7 @@
         "node": ">=12.22.6"
     },
     "dependencies": {
-        "@znetstar/encode-tools": "^1.0.2"
+        "@znetstar/encode-tools": "^1.0.2",
+        "cbor": "^8.1.0"
     }
 }
