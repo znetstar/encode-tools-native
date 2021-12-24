@@ -82,6 +82,9 @@ export class EncodeToolsAuto implements IEncodeTools {
   protected native: Native.EncodeToolsNative;
   public options: EncodingOptions;
 
+
+  public get toPojoInstance() { return this.regular.toPojoInstance; }
+
   /**
    *
    * @param nativeOptions Options for the `EncodeToolsNative` constructor that will be used if the corresponding native module is available
@@ -403,42 +406,42 @@ export class EncodeToolsAuto implements IEncodeTools {
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.json): string;
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.json, useToPojoBeforeSerializing?: boolean): string;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
    *
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.cbor): Buffer;
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.cbor, useToPojoBeforeSerializing?: boolean): Buffer;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
    *
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.msgpack): Buffer;
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.msgpack, useToPojoBeforeSerializing?: boolean): Buffer;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
    *
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.bson): Buffer;
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.bson, useToPojoBeforeSerializing?: boolean): Buffer;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
    *
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat): Buffer;
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat, useToPojoBeforeSerializing?: boolean): Buffer;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
    *
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat: SerializationFormat = this.options.serializationFormat): Buffer|string {
+  public serializeObject<T>(obj: T, serializationFormat: SerializationFormat = this.options.serializationFormat, useToPojoBeforeSerializing: boolean = this.options.useToPojoBeforeSerializing): Buffer|string {
     if (serializationFormat === SerializationFormat.cbor && this.availableNativeModules.cborExtract) {
       return this.native.serializeObject(obj, serializationFormat);
     } else {

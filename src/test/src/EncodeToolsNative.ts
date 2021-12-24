@@ -6,7 +6,7 @@ import EncodeToolsNative, {
   BinaryInputOutput,
   DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS as DEFAULT_ENCODE_TOOLS_OPTIONS,
   ConvertableFormatMimeTypes, MimeTypesConvertableFormat, SerializationFormatMimeTypes,
-  ImageFormat
+  ImageFormat, SerializationFormat
 } from '../../EncodeToolsNative';
 const LZMA = require('lzma-native').LZMA;
 import {
@@ -183,7 +183,19 @@ describe('EncodeToolsNative', async function () {
       assert.deepEqual(obj2, dims, 'Image metadata is not the same as the image that was create');
     });
   });
-
+  describe('serializeObject(useToPojoBeforeSerializing = true)', async function () {
+    it('if useToPojoBeforeSerializing is set to true, a Buffer should be returned as an array of numbers', async function () {
+      const enc = new EncodeToolsNative({ useToPojoBeforeSerializing: true, serializationFormat: SerializationFormat.json });
+      const bufArr: number[]  = [];
+      for (let i = 0; i < chance.integer({ min: 1, max: 1024 }); i++) {
+        bufArr.push(chance.integer({ min: 0, max: 255 }));
+      }
+      const buf = (Buffer.from(bufArr));
+      const jsonObj = enc.serializeObject({ foo: buf });
+      const obj = JSON.parse(jsonObj);
+      assert.deepEqual(obj.foo, bufArr);
+    });
+  });
 
   for (let test of tests) {
     await test.testEncode();
