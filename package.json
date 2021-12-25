@@ -1,6 +1,6 @@
 {
     "name": "@znetstar/encode-tools-native",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "This package aggregates different libraries for encoding, serializing, generating ids and hashing things, exposing a common interface.",
     "main": "lib/index.js",
     "scripts": {
@@ -72,7 +72,7 @@
     },
     "dependencies": {
         "@thirdact/to-pojo": "^2.4.0",
-        "@znetstar/encode-tools": "^1.2.0",
+        "@znetstar/encode-tools": "^1.2.1",
         "cbor": "^8.1.0"
     }
 }
