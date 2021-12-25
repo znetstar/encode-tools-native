@@ -27,6 +27,7 @@ import {
   IEncodeTools,
   CropDims
 } from "./IEncodeTools";
+import {ConfiguredEncodingOptions} from "@znetstar/encode-tools/lib/IEncodeTools";
 
 export {
   BinaryEncoding
@@ -80,11 +81,13 @@ export class EncodeToolsAuto implements IEncodeTools {
 
   protected regular: EncodeTools;
   protected native: Native.EncodeToolsNative;
-  public options: EncodingOptions;
+  public options: ConfiguredEncodingOptions;
 
 
   public get toPojoInstance() { return this.regular.toPojoInstance; }
 
+  protected  nativeOptions: Native.ConfiguredEncodingOptions;
+  protected  fallbackOptions: Regular.ConfiguredEncodingOptions;
   /**
    *
    * @param nativeOptions Options for the `EncodeToolsNative` constructor that will be used if the corresponding native module is available
@@ -93,8 +96,19 @@ export class EncodeToolsAuto implements IEncodeTools {
    * @example
    * const enc = new EncodeToolsAuto({ hashAlgorithm: HashAlgorithm.xxhash3 }, { hashAlgorithm: HashAlgorithm.xxhash64 });
    */
-  constructor(protected nativeOptions: Native.EncodingOptions = Native.DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS, protected fallbackOptions: Regular.EncodingOptions = DEFAULT_ENCODE_TOOLS_OPTIONS) {
-    this.options = { ...nativeOptions };
+  constructor(nativeOptions?: Native.EncodingOptions, fallbackOptions?: Regular.EncodingOptions) {
+    this.nativeOptions = {
+      ...nativeOptions,
+      ...Native.DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS
+    };
+    this.fallbackOptions = {
+      ...fallbackOptions,
+      ...Regular.DEFAULT_ENCODE_TOOLS_OPTIONS
+    };
+
+    this.options = {
+      ...this.nativeOptions
+    };
     if (this.options.hashAlgorithm === HashAlgorithm.xxhash3 && !(this.availableNativeModules.xxhashAddon)) {
       this.options.hashAlgorithm = fallbackOptions.hashAlgorithm;
     }

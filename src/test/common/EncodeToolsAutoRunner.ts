@@ -67,12 +67,14 @@ export function randomOptions(): EncodingOptions {
     binaryEncoding: randomOption<BinaryEncoding>(BinaryEncoding),
     hashAlgorithm: randomOption<HashAlgorithm>(HashAlgorithm),
     uniqueIdFormat: randomOption<IDFormat>(IDFormat),
-    compressionLevel: chance.integer({ min: 1, max: 9 })
+    compressionLevel: chance.integer({ min: 1, max: 9 }),
+    imageFormat: randomOption<ImageFormat>(ImageFormat),
+    useToPojoBeforeSerializing: false,
   }
 }
 
 class EncodeToolsCustomAvailableNativeModules extends EncodeTools {
-  constructor(public useNative: boolean, protected nativeOptions: Native.EncodingOptions = DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS, protected fallbackOptions: Regular.EncodingOptions = DEFAULT_ENCODE_TOOLS_OPTIONS) {
+  constructor(public useNative: boolean, nativeOptions: Native.EncodingOptions = DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS, fallbackOptions: Regular.EncodingOptions = DEFAULT_ENCODE_TOOLS_OPTIONS) {
     super(nativeOptions, fallbackOptions);
   }
 
@@ -120,7 +122,7 @@ export abstract class EncodeToolsAutoRunner<I, O extends BinaryInputOutput, F ex
     let self = this;
     describe('EncodeToolsAuto/'+this.functionName.encodeName, async function () {
       this.timeout(self.timeout);
-      for (let format of self.formats) {
+      for (let format of Array.from(self.formats.values())) {
         it(`should use ${self.functionName.encodeName} encode to ${format}`, async function () {
           let {decoded: inDecoded, encoded: inEncoded} = await self.generate(format)
           let outEncoded = await self.encode(inDecoded, format);
@@ -134,7 +136,7 @@ export abstract class EncodeToolsAutoRunner<I, O extends BinaryInputOutput, F ex
     let self = this;
     describe('EncodeToolsAuto/'+this.functionName.decodeName, async function () {
       this.timeout(self.timeout);
-      for (let format of self.formats) {
+      for (let format of Array.from(self.formats.values())) {
         it(`should use ${self.functionName.decodeName} decode from ${format}`, async function () {
           let {decoded: inDecoded, encoded: inEncoded} = await self.generate(format);
           let outDecoded = await self.decode(inEncoded, format);

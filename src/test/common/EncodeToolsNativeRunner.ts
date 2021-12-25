@@ -66,6 +66,8 @@ export function randomOptions(): EncodingOptions {
     binaryEncoding: randomOption<BinaryEncoding>(BinaryEncoding),
     hashAlgorithm: randomOption<HashAlgorithm>(HashAlgorithm),
     uniqueIdFormat: randomOption<IDFormat>(IDFormat),
+    imageFormat: randomOption<ImageFormat>(ImageFormat),
+    useToPojoBeforeSerializing: false,
     compressionLevel: chance.integer({ min: 1, max: 9 })
   }
 }
@@ -100,7 +102,7 @@ export abstract class EncodeToolsNativeRunner<I, O extends BinaryInputOutput, F 
     let self = this;
     describe('EncodeToolsNative/'+this.functionName.encodeName, async function () {
       this.timeout(self.timeout);
-      for (let format of self.formats) {
+      for (let format of Array.from(self.formats.values())) {
         it(`should use ${self.functionName.encodeName} encode to ${format}`, async function () {
           let {decoded: inDecoded, encoded: inEncoded} = await self.generate(format)
           let outEncoded = await self.encode(inDecoded, format);
@@ -114,7 +116,7 @@ export abstract class EncodeToolsNativeRunner<I, O extends BinaryInputOutput, F 
     let self = this;
     describe('EncodeToolsNative/'+this.functionName.decodeName, async function () {
       this.timeout(self.timeout);
-      for (let format of self.formats) {
+      for (let format of Array.from(self.formats.values())) {
         it(`should use ${self.functionName.decodeName} decode from ${format}`, async function () {
           let {decoded: inDecoded, encoded: inEncoded} = await self.generate(format);
           let outDecoded = await self.decode(inEncoded, format);

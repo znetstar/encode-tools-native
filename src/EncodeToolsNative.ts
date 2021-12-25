@@ -127,19 +127,19 @@ export const ImageFormatMimeTypes: Map<ImageFormat, string> = new Map<ImageForma
   [ ImageFormat.webp, 'image/webp' ]
 ]);
 
-export interface EncodingOptions {
-  uniqueIdFormat?: IDFormat;
-  serializationFormat?: SerializationFormat;
-  hashAlgorithm?: HashAlgorithm;
-  binaryEncoding?: BinaryEncoding;
-  compressionFormat?: CompressionFormat;
+export interface ConfiguredEncodingOptions {
+  uniqueIdFormat: IDFormat;
+  serializationFormat: SerializationFormat;
+  hashAlgorithm: HashAlgorithm;
+  binaryEncoding: BinaryEncoding;
+  compressionFormat: CompressionFormat;
   compressionLevel?: number;
-  imageFormat?: ImageFormat;
+  imageFormat: ImageFormat;
   toPojoOptions?: Partial<ToPojoOptions<unknown, unknown>>
-  useToPojoBeforeSerializing?: boolean;
+  useToPojoBeforeSerializing: boolean;
 }
 
-export const DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS: EncodingOptions = {
+export const DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS: ConfiguredEncodingOptions = {
   binaryEncoding: BinaryEncoding.base64,
   hashAlgorithm: HashAlgorithm.xxhash64,
   serializationFormat: SerializationFormat.json,
@@ -148,6 +148,9 @@ export const DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS: EncodingOptions = {
   imageFormat: ImageFormat.png,
   useToPojoBeforeSerializing: false
 };
+
+
+export type EncodingOptions = Partial<ConfiguredEncodingOptions>;
 
 
 export type ImageMetadata = ImageMetadataBase<ImageFormat>;
@@ -182,8 +185,13 @@ export const MimeTypesConvertableFormat: Map<string, ConvertableFormat> = new Ma
  * This class will not work in browsers.
  */
 export class EncodeToolsNative extends EncodeTools implements IEncodeTools {
-    constructor(public options: EncodingOptions = DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS) {
+    public options: ConfiguredEncodingOptions;
+    constructor(options?: EncodingOptions) {
         super(options);
+        this.options = {
+          ...DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS,
+          ...options
+        };
     }
 
   /**
