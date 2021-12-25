@@ -455,7 +455,7 @@ export class EncodeToolsAuto implements IEncodeTools {
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
-  public serializeObject<T>(obj: T, serializationFormat: SerializationFormat = this.options.serializationFormat, useToPojoBeforeSerializing: boolean = this.options.useToPojoBeforeSerializing): Buffer|string {
+  public serializeObject<T>(obj: T, serializationFormat: SerializationFormat = this.options.serializationFormat, useToPojoBeforeSerializing: boolean|undefined = this.options.useToPojoBeforeSerializing): Buffer|string {
     if (serializationFormat === SerializationFormat.cbor && this.availableNativeModules.cborExtract) {
       return this.native.serializeObject(obj, serializationFormat);
     } else {
