@@ -154,13 +154,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Encode<wbr>Tools<wbr>Auto<span class="tsd-signature-symbol">(</span>nativeOptions<span class="tsd-signature-symbol">?: </span><a href="../interfaces/encodetoolsnative.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a>, fallbackOptions<span class="tsd-signature-symbol">?: </span><a href="../interfaces/encodetools.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="encodetoolsauto.encodetoolsauto-1.html" class="tsd-signature-type" data-tsd-kind="Class">EncodeToolsAuto</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Encode<wbr>Tools<wbr>Auto<span class="tsd-signature-symbol">(</span>nativeOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetoolsnative.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span>, fallbackOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetools.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="encodetoolsauto.encodetoolsauto-1.html" class="tsd-signature-type" data-tsd-kind="Class">EncodeToolsAuto</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L86">src/EncodeToolsAuto.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L90">src/EncodeToolsAuto.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -173,13 +173,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nativeOptions: <a href="../interfaces/encodetoolsnative.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a><span class="tsd-signature-symbol"> = ...</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nativeOptions: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetoolsnative.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Options for the <code>EncodeToolsNative</code> constructor that will be used if the corresponding native module is available</p>
 									</div>
 								</li>
 								<li>
-									<h5>fallbackOptions: <a href="../interfaces/encodetools.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a><span class="tsd-signature-symbol"> = ...</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fallbackOptions: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetools.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A set of fallback options to be used if the native module needed for the option in the first argument is missing</p>
 									</div>
@@ -195,8 +195,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="fallbackoptions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> fallback<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">fallback<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/encodetools.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">fallback<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/encodetools.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a></div>
 					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L90">src/EncodeToolsAuto.ts:90</a></li>
+						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
@@ -205,25 +208,28 @@
 					<div class="tsd-signature tsd-kind-icon">native<span class="tsd-signature-symbol">:</span> <a href="encodetoolsnative.encodetoolsnative-1.html" class="tsd-signature-type" data-tsd-kind="Class">EncodeToolsNative</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L82">src/EncodeToolsAuto.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L83">src/EncodeToolsAuto.ts:83</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="nativeoptions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> native<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">native<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/encodetoolsnative.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">native<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/encodetoolsnative.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a></div>
 					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L89">src/EncodeToolsAuto.ts:89</a></li>
+						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="options" class="tsd-anchor"></a>
 					<h3>options</h3>
-					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/encodetools.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a></div>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/encodetools.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#options">options</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L83">src/EncodeToolsAuto.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L84">src/EncodeToolsAuto.ts:84</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +239,7 @@
 					<div class="tsd-signature tsd-kind-icon">regular<span class="tsd-signature-symbol">:</span> <a href="encodetools.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L81">src/EncodeToolsAuto.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L82">src/EncodeToolsAuto.ts:82</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -250,7 +256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L70">src/EncodeToolsAuto.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L71">src/EncodeToolsAuto.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -273,7 +279,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#convertableformatmimetypes">convertableFormatMimeTypes</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L119">src/EncodeToolsAuto.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L133">src/EncodeToolsAuto.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -296,7 +302,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#mimetypesconvertableformat">mimeTypesConvertableFormat</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L125">src/EncodeToolsAuto.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L139">src/EncodeToolsAuto.ts:139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -318,7 +324,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L86">src/EncodeToolsAuto.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L87">src/EncodeToolsAuto.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ToPojo</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -335,7 +341,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L886">src/EncodeToolsAuto.ts:886</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L900">src/EncodeToolsAuto.ts:900</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -363,7 +369,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#adjustimagebrightness">adjustImageBrightness</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L147">src/EncodeToolsAuto.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L161">src/EncodeToolsAuto.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,7 +401,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.adjustImageBrightness</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L154">src/EncodeToolsAuto.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L168">src/EncodeToolsAuto.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -427,7 +433,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.adjustImageBrightness</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L161">src/EncodeToolsAuto.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L175">src/EncodeToolsAuto.ts:175</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -470,7 +476,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#compress">compress</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L374">src/EncodeToolsAuto.ts:374</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L388">src/EncodeToolsAuto.ts:388</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -508,7 +514,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.compress</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L381">src/EncodeToolsAuto.ts:381</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L395">src/EncodeToolsAuto.ts:395</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -546,7 +552,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.compress</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L388">src/EncodeToolsAuto.ts:388</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L402">src/EncodeToolsAuto.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -595,7 +601,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#convertimage">convertImage</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L181">src/EncodeToolsAuto.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L195">src/EncodeToolsAuto.ts:195</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -624,7 +630,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.convertImage</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L187">src/EncodeToolsAuto.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L201">src/EncodeToolsAuto.ts:201</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -653,7 +659,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.convertImage</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L193">src/EncodeToolsAuto.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L207">src/EncodeToolsAuto.ts:207</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -693,7 +699,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#cropimage">cropImage</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L248">src/EncodeToolsAuto.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L262">src/EncodeToolsAuto.ts:262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -728,7 +734,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.cropImage</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L255">src/EncodeToolsAuto.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L269">src/EncodeToolsAuto.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -763,7 +769,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.cropImage</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L262">src/EncodeToolsAuto.ts:262</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L276">src/EncodeToolsAuto.ts:276</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -816,7 +822,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#decodebuffer">decodeBuffer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L670">src/EncodeToolsAuto.ts:670</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L684">src/EncodeToolsAuto.ts:684</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -844,7 +850,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L676">src/EncodeToolsAuto.ts:676</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L690">src/EncodeToolsAuto.ts:690</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -872,7 +878,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L682">src/EncodeToolsAuto.ts:682</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L696">src/EncodeToolsAuto.ts:696</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -900,7 +906,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L688">src/EncodeToolsAuto.ts:688</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L702">src/EncodeToolsAuto.ts:702</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -928,7 +934,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L694">src/EncodeToolsAuto.ts:694</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L708">src/EncodeToolsAuto.ts:708</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -956,7 +962,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L700">src/EncodeToolsAuto.ts:700</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L714">src/EncodeToolsAuto.ts:714</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -984,7 +990,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L706">src/EncodeToolsAuto.ts:706</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L720">src/EncodeToolsAuto.ts:720</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1012,7 +1018,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L712">src/EncodeToolsAuto.ts:712</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L726">src/EncodeToolsAuto.ts:726</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1040,7 +1046,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L724">src/EncodeToolsAuto.ts:724</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L738">src/EncodeToolsAuto.ts:738</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1068,7 +1074,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L730">src/EncodeToolsAuto.ts:730</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L744">src/EncodeToolsAuto.ts:744</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1114,7 +1120,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#decodeobject">decodeObject</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L590">src/EncodeToolsAuto.ts:590</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L604">src/EncodeToolsAuto.ts:604</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1148,7 +1154,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L596">src/EncodeToolsAuto.ts:596</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L610">src/EncodeToolsAuto.ts:610</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1182,7 +1188,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L602">src/EncodeToolsAuto.ts:602</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L616">src/EncodeToolsAuto.ts:616</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1216,7 +1222,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L608">src/EncodeToolsAuto.ts:608</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L622">src/EncodeToolsAuto.ts:622</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1250,7 +1256,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L614">src/EncodeToolsAuto.ts:614</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L628">src/EncodeToolsAuto.ts:628</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1284,7 +1290,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L620">src/EncodeToolsAuto.ts:620</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L634">src/EncodeToolsAuto.ts:634</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1318,7 +1324,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L626">src/EncodeToolsAuto.ts:626</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L640">src/EncodeToolsAuto.ts:640</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1352,7 +1358,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L632">src/EncodeToolsAuto.ts:632</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L646">src/EncodeToolsAuto.ts:646</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1386,7 +1392,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L644">src/EncodeToolsAuto.ts:644</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L658">src/EncodeToolsAuto.ts:658</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1420,7 +1426,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L650">src/EncodeToolsAuto.ts:650</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L664">src/EncodeToolsAuto.ts:664</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1465,7 +1471,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#decompress">decompress</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L342">src/EncodeToolsAuto.ts:342</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L356">src/EncodeToolsAuto.ts:356</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1497,7 +1503,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decompress</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L348">src/EncodeToolsAuto.ts:348</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L362">src/EncodeToolsAuto.ts:362</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1529,7 +1535,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.decompress</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L354">src/EncodeToolsAuto.ts:354</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L368">src/EncodeToolsAuto.ts:368</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1574,7 +1580,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#deserializeobject">deserializeObject</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L458">src/EncodeToolsAuto.ts:458</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L472">src/EncodeToolsAuto.ts:472</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1609,7 +1615,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.deserializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L465">src/EncodeToolsAuto.ts:465</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L479">src/EncodeToolsAuto.ts:479</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1644,7 +1650,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.deserializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L472">src/EncodeToolsAuto.ts:472</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L486">src/EncodeToolsAuto.ts:486</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1679,7 +1685,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.deserializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L479">src/EncodeToolsAuto.ts:479</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L493">src/EncodeToolsAuto.ts:493</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1714,7 +1720,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.deserializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L486">src/EncodeToolsAuto.ts:486</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L500">src/EncodeToolsAuto.ts:500</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1767,7 +1773,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#encodebuffer">encodeBuffer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L745">src/EncodeToolsAuto.ts:745</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L759">src/EncodeToolsAuto.ts:759</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1795,7 +1801,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L751">src/EncodeToolsAuto.ts:751</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L765">src/EncodeToolsAuto.ts:765</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1823,7 +1829,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L757">src/EncodeToolsAuto.ts:757</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L771">src/EncodeToolsAuto.ts:771</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1851,7 +1857,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L763">src/EncodeToolsAuto.ts:763</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L777">src/EncodeToolsAuto.ts:777</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1879,7 +1885,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L769">src/EncodeToolsAuto.ts:769</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L783">src/EncodeToolsAuto.ts:783</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1907,7 +1913,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L775">src/EncodeToolsAuto.ts:775</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L789">src/EncodeToolsAuto.ts:789</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1935,7 +1941,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L781">src/EncodeToolsAuto.ts:781</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L795">src/EncodeToolsAuto.ts:795</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1963,7 +1969,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L787">src/EncodeToolsAuto.ts:787</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L801">src/EncodeToolsAuto.ts:801</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1991,7 +1997,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L799">src/EncodeToolsAuto.ts:799</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L813">src/EncodeToolsAuto.ts:813</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2019,7 +2025,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeBuffer</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L805">src/EncodeToolsAuto.ts:805</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L819">src/EncodeToolsAuto.ts:819</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2065,7 +2071,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#encodeobject">encodeObject</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L506">src/EncodeToolsAuto.ts:506</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L520">src/EncodeToolsAuto.ts:520</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2099,7 +2105,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L512">src/EncodeToolsAuto.ts:512</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L526">src/EncodeToolsAuto.ts:526</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2133,7 +2139,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L518">src/EncodeToolsAuto.ts:518</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L532">src/EncodeToolsAuto.ts:532</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2167,7 +2173,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L524">src/EncodeToolsAuto.ts:524</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L538">src/EncodeToolsAuto.ts:538</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2201,7 +2207,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L530">src/EncodeToolsAuto.ts:530</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L544">src/EncodeToolsAuto.ts:544</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2235,7 +2241,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L536">src/EncodeToolsAuto.ts:536</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L550">src/EncodeToolsAuto.ts:550</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2269,7 +2275,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L542">src/EncodeToolsAuto.ts:542</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L556">src/EncodeToolsAuto.ts:556</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2303,7 +2309,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L553">src/EncodeToolsAuto.ts:553</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L567">src/EncodeToolsAuto.ts:567</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2337,7 +2343,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L565">src/EncodeToolsAuto.ts:565</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L579">src/EncodeToolsAuto.ts:579</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2371,7 +2377,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.encodeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L571">src/EncodeToolsAuto.ts:571</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L585">src/EncodeToolsAuto.ts:585</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2414,7 +2420,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#hash">hash</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L283">src/EncodeToolsAuto.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L297">src/EncodeToolsAuto.ts:297</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2451,7 +2457,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#hashobject">hashObject</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L323">src/EncodeToolsAuto.ts:323</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L337">src/EncodeToolsAuto.ts:337</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2488,7 +2494,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#hashstring">hashString</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L303">src/EncodeToolsAuto.ts:303</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L317">src/EncodeToolsAuto.ts:317</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2525,7 +2531,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#headertoconvertableformat">headerToConvertableFormat</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L129">src/EncodeToolsAuto.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L143">src/EncodeToolsAuto.ts:143</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2561,7 +2567,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#headertoimageformat">headerToImageFormat</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L137">src/EncodeToolsAuto.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L151">src/EncodeToolsAuto.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2594,7 +2600,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#headertoserializationformat">headerToSerializationFormat</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L133">src/EncodeToolsAuto.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L147">src/EncodeToolsAuto.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2629,7 +2635,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#resizeimage">resizeImage</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L213">src/EncodeToolsAuto.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L227">src/EncodeToolsAuto.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2664,7 +2670,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.resizeImage</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L220">src/EncodeToolsAuto.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L234">src/EncodeToolsAuto.ts:234</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2699,7 +2705,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.resizeImage</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L227">src/EncodeToolsAuto.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L241">src/EncodeToolsAuto.ts:241</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2747,7 +2753,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#serializeobject">serializeObject</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L409">src/EncodeToolsAuto.ts:409</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L423">src/EncodeToolsAuto.ts:423</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2785,7 +2791,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.serializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L416">src/EncodeToolsAuto.ts:416</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L430">src/EncodeToolsAuto.ts:430</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2823,7 +2829,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.serializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L423">src/EncodeToolsAuto.ts:423</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L437">src/EncodeToolsAuto.ts:437</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2861,7 +2867,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.serializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L430">src/EncodeToolsAuto.ts:430</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L444">src/EncodeToolsAuto.ts:444</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2899,7 +2905,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.serializeObject</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L437">src/EncodeToolsAuto.ts:437</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L451">src/EncodeToolsAuto.ts:451</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2953,7 +2959,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/iencodetools.default.html">default</a>.<a href="../interfaces/iencodetools.default.html#uniqueid">uniqueId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L822">src/EncodeToolsAuto.ts:822</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L836">src/EncodeToolsAuto.ts:836</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2976,7 +2982,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L829">src/EncodeToolsAuto.ts:829</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L843">src/EncodeToolsAuto.ts:843</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2999,7 +3005,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L836">src/EncodeToolsAuto.ts:836</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L850">src/EncodeToolsAuto.ts:850</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3022,7 +3028,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L843">src/EncodeToolsAuto.ts:843</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L857">src/EncodeToolsAuto.ts:857</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3045,7 +3051,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L850">src/EncodeToolsAuto.ts:850</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L864">src/EncodeToolsAuto.ts:864</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3068,7 +3074,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L857">src/EncodeToolsAuto.ts:857</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L871">src/EncodeToolsAuto.ts:871</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3094,7 +3100,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L864">src/EncodeToolsAuto.ts:864</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L878">src/EncodeToolsAuto.ts:878</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3117,7 +3123,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of IEncodeTools.uniqueId</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L871">src/EncodeToolsAuto.ts:871</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L885">src/EncodeToolsAuto.ts:885</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3148,13 +3154,13 @@
 					<a name="create" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>nativeOptions<span class="tsd-signature-symbol">?: </span><a href="../interfaces/encodetoolsnative.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a>, fallbackOptions<span class="tsd-signature-symbol">?: </span><a href="../interfaces/encodetools.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="encodetools.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>nativeOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetoolsnative.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span>, fallbackOptions<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetools.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="encodetools.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/ac377a5/src/EncodeToolsAuto.ts#L892">src/EncodeToolsAuto.ts:892</a></li>
+									<li>Defined in <a href="https://github.com/znetstar/encode-tools-native/blob/a5fc60e/src/EncodeToolsAuto.ts#L906">src/EncodeToolsAuto.ts:906</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3165,10 +3171,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nativeOptions: <a href="../interfaces/encodetoolsnative.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nativeOptions: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetoolsnative.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fallbackOptions: <a href="../interfaces/encodetools.encodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EncodingOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fallbackOptions: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/encodetools.configuredencodingoptions.html" class="tsd-signature-type" data-tsd-kind="Interface">ConfiguredEncodingOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="encodetools.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
