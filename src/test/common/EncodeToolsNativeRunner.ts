@@ -1,7 +1,7 @@
 import {
   BinaryEncoding,
   BinaryInputOutput,
-  CompressionFormat,
+  CompressionFormat, ConfiguredEncodingOptions,
   EncodeToolsFormat,
   EncodeToolsNative as EncodeTools,
   EncodingOptions,
@@ -58,7 +58,7 @@ export function randomOption<T extends EncodeToolsFormat>(pool: any): T {
   return chance.shuffle(Object.keys(pool).map(k => pool[k]))[0] as T;
 }
 
-export function randomOptions(): EncodingOptions {
+export function randomOptions(): ConfiguredEncodingOptions {
   let chance = Chance();
   return {
     compressionFormat: randomOption<CompressionFormat>(CompressionFormat),
@@ -68,8 +68,9 @@ export function randomOptions(): EncodingOptions {
     uniqueIdFormat: randomOption<IDFormat>(IDFormat),
     imageFormat: randomOption<ImageFormat>(ImageFormat),
     useToPojoBeforeSerializing: false,
-    compressionLevel: chance.integer({ min: 1, max: 9 })
-  }
+    compressionLevel: chance.integer({ min: 1, max: 9 }),
+    encodeBuffersWhenUsingToPojo: false
+  } as ConfiguredEncodingOptions;
 }
 
 export interface FunctionNameSet { encodeName: string, decodeName?: string }

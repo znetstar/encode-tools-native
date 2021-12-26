@@ -6,7 +6,7 @@ import EncodeToolsNative, {
   BinaryInputOutput,
   DEFAULT_ENCODE_TOOLS_NATIVE_OPTIONS as DEFAULT_ENCODE_TOOLS_OPTIONS,
   ConvertableFormatMimeTypes, MimeTypesConvertableFormat, SerializationFormatMimeTypes,
-  ImageFormat, SerializationFormat
+  ImageFormat, SerializationFormat, BinaryEncoding
 } from '../../EncodeToolsNative';
 const LZMA = require('lzma-native').LZMA;
 import {
@@ -194,6 +194,24 @@ describe('EncodeToolsNative', async function () {
       const jsonObj = enc.serializeObject({ foo: buf });
       const obj = JSON.parse(jsonObj);
       assert.deepEqual(obj.foo, bufArr);
+    });
+  });
+  describe('serializeObject(useToPojoBeforeSerializing = true, encodeBuffersWhenUsingToPojo = true)', async function () {
+    it('if useToPojoBeforeSerializing is set to true, a Buffer should be returned as an array of numbers', async function () {
+      const enc = new EncodeTools({
+        useToPojoBeforeSerializing: true,
+        serializationFormat: SerializationFormat.json,
+        encodeBuffersWhenUsingToPojo: true,
+        binaryEncoding: BinaryEncoding.hex
+      });
+      const bufArr: number[]  = [];
+      for (let i = 0; i < chance.integer({ min: 1, max: 1024 }); i++) {
+        bufArr.push(chance.integer({ min: 0, max: 255 }));
+      }
+      const buf = (Buffer.from(bufArr));
+      const jsonObj = enc.serializeObject({ foo: buf });
+      const obj = JSON.parse(jsonObj);
+      assert.deepEqual(obj.foo, buf.toString('hex'));
     });
   });
 
