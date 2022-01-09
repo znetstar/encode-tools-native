@@ -210,7 +210,9 @@ describe('EncodeToolsNative', async function () {
       }
       const buf = (Buffer.from(bufArr));
       const jsonObj = enc.serializeObject({ foo: buf });
-      const obj = JSON.parse(jsonObj);
+
+      // @ts-ignore
+      const obj = JSON.parse(Buffer.from(jsonObj, 'hex'));
       assert.deepEqual(obj.foo, buf.toString('hex'));
     });
   });
