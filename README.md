@@ -115,11 +115,12 @@ Below are a list of supported algorithms, their backing library, and their suppo
 ### Serialization
 
 | Name    | Works In Browser? | Package          | Native Package |
-| ------- | ----------------- | ---------------- | -------------- |
+|---------|-------------------|------------------|----------------|
 | json    | ✓                 | (built in)       |                |
 | cbor    | ✓                 | cbor-web         | cbor           |
 | msgpack | ✓                 | @msgpack/msgpack |                |
 | bson    | ✓                 | bson             | bson-ext       |
+| json5   | ✓                 | json5            |                |
 
 ### Compression
 

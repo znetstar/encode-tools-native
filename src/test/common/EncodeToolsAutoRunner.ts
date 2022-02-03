@@ -249,6 +249,7 @@ export class SerializeObjectRunner extends EncodeToolsAutoRunner<any, BinaryInpu
     super(native, formats);
 
     this.formats.delete(SerializationFormat.json);
+    this.formats.delete(SerializationFormat.json5);
     this.formats.delete(SerializationFormat.msgpack);
     this.formats.delete(SerializationFormat.cbor);
   }

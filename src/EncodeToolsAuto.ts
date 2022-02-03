@@ -427,6 +427,13 @@ export class EncodeToolsAuto implements IEncodeTools {
    * @param obj Object to serialize
    * @param serializationFormat - Algorithm to serialize with
    */
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.json5, useToPojoBeforeSerializing?: boolean): string;
+  /**
+   * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
+   *
+   * @param obj Object to serialize
+   * @param serializationFormat - Algorithm to serialize with
+   */
   public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.cbor, useToPojoBeforeSerializing?: boolean): Buffer;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
@@ -470,6 +477,13 @@ export class EncodeToolsAuto implements IEncodeTools {
    * @param serializationFormat - Algorithm to deserialize with
    */
   public deserializeObject<T>(data: Buffer|ArrayBuffer|string, serializationFormat?: SerializationFormat.json): T;
+  /**
+   * Deserializes an object serialized using one of the available algorithms, returning the result as an object
+   *
+   * @param data Data to deserialize
+   * @param serializationFormat - Algorithm to deserialize with
+   */
+  public deserializeObject<T>(data: Buffer|ArrayBuffer|string, serializationFormat?: SerializationFormat.json5): T;
   /**
    * Deserializes an object serialized using one of the available algorithms, returning the result as an object
    *

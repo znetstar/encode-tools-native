@@ -230,6 +230,7 @@ export class SerializeObjectRunner extends EncodeToolsNativeRunner<any, BinaryIn
     super(formats);
 
     this.formats.delete(SerializationFormat.json);
+    this.formats.delete(SerializationFormat.json5);
     this.formats.delete(SerializationFormat.msgpack);
   }
   public async encode(input: any, format: SerializationFormat): Promise<BinaryInputOutput> {

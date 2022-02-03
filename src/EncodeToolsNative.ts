@@ -456,6 +456,15 @@ export class EncodeToolsNative extends EncodeTools implements IEncodeTools {
    * @param useToPojoBeforeSerializing Use `toPojo` on the object before serializing
    * @param encodeBuffersWhenUsingToPojo If true, Buffers will be encoded with `this.encodeBuffer` when encountered.
    */
+  public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.json5, useToPojoBeforeSerializing?: boolean, encodeBuffersWhenUsingToPojo?: boolean): string;
+  /**
+   * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
+   *
+   * @param obj Object to serialize
+   * @param serializationFormat - Algorithm to serialize with
+   * @param useToPojoBeforeSerializing Use `toPojo` on the object before serializing
+   * @param encodeBuffersWhenUsingToPojo If true, Buffers will be encoded with `this.encodeBuffer` when encountered.
+   */
   public serializeObject<T>(obj: T, serializationFormat?: SerializationFormat.cbor, useToPojoBeforeSerializing?: boolean, encodeBuffersWhenUsingToPojo?: boolean): Buffer;
   /**
    * Serializes an object using one of the available algorithms, returning the result as a Buffer or a string
@@ -509,6 +518,13 @@ export class EncodeToolsNative extends EncodeTools implements IEncodeTools {
    * @param serializationFormat - Algorithm to deserialize with
    */
   public deserializeObject<T>(data: Buffer|ArrayBuffer|string, serializationFormat?: SerializationFormat.json): T;
+  /**
+   * Deserializes an object serialized using one of the available algorithms, returning the result as an object
+   *
+   * @param data Data to deserialize
+   * @param serializationFormat - Algorithm to deserialize with
+   */
+  public deserializeObject<T>(data: Buffer|ArrayBuffer|string, serializationFormat?: SerializationFormat.json5): T;
   /**
    * Deserializes an object serialized using one of the available algorithms, returning the result as an object
    *
