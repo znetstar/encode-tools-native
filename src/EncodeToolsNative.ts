@@ -104,8 +104,7 @@ export enum ImageFormat {
    */
   tiff = 'tiff',
   /**
-   * Need to fix the libvips/ImageMagick error (https://zb.gy/qPJH).
-   * @deprecated
+   * GIF Format
    */
   gif = 'gif'
   /**

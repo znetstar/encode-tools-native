@@ -90,7 +90,7 @@ Below are a list of supported algorithms, their backing library, and their suppo
 | Name          | Works In Browser? | Package                                              | Native Package                                             |
 | ------------- | ----------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
 | crc32         | ✓                 | [hash-wasm](https://www.npmjs.com/package/hash-wasm) |                                                            |
-| xxhash3       |                   |                                                      | [xxhash-addon](https://www.npmjs.com/package/xxhash-addon) |
+| xxhash3       | ✓                 | [hash-wasm](https://www.npmjs.com/package/hash-wasm) | [xxhash-addon](https://www.npmjs.com/package/xxhash-addon) |
 | xxhash64      | ✓                 | [hash-wasm](https://www.npmjs.com/package/hash-wasm) | [xxhash-addon](https://www.npmjs.com/package/xxhash-addon) |
 | xxhash32      | ✓                 | [hash-wasm](https://www.npmjs.com/package/hash-wasm) | [xxhash-addon](https://www.npmjs.com/package/xxhash-addon) |
 | md5           | ✓                 | [hash-wasm](https://www.npmjs.com/package/hash-wasm) | [(built-in)](https://nodejs.org/api/crypto.html)           |
@@ -132,13 +132,13 @@ Below are a list of supported algorithms, their backing library, and their suppo
 ### Image Manipulation
 
 | Name | Works In Browser? | Package | Native Package |
-| ---- | ----------------- | ------- | -------------- |
+|------| ----------------- | ------- | -------------- |
 | png  | ✓                 | jimp    | sharp          |
 | jpeg | ✓                 | jimp    | sharp          |
 | webp |                   | sharp   |                |
 | avif |                   | sharp   |                |
 | tiff |                   | sharp   |                |
-| gif* |                   | sharp   |                |
+| gif  |                   | sharp   |                |
 
 ## Requirements
 
@@ -156,8 +156,6 @@ if (enc.availableNativeModules.xxhashAddon)
 else
     console.log('should be xxhash64', await enc.hashString('Test'));
 ```
-
-The `gif` image format in `EncodeToolsAuto` requires `libvips` compiled with ImageMagick support ([as described here](https://zb.gy/qPJH)). I haven't had time to re-build libvips on my machine, so there are no mocha tests for the `gif` format.
 
 ## Usage
 

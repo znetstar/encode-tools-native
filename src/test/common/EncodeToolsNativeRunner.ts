@@ -307,7 +307,7 @@ export abstract class ImageRunnerBase extends EncodeToolsNativeRunner<BinaryInpu
     super(formats);
 
     // this.formats.delete(ImageFormat.avif);
-    this.formats.delete(ImageFormat.gif);
+    // this.formats.delete(ImageFormat.gif);
     // this.formats.delete(ImageFormat.svg);
     // this.formats.delete(ImageFormat.webp);
   }
